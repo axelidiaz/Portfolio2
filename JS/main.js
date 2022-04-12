@@ -29,3 +29,21 @@ function linkAction() {
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+/*======================= ACCORDION SKILLS ==========================*/
+const skillsContent = document.getElementsByClassName("skills_content"),
+    skillsHeader = document.querySelectorAll(".skills_header");
+
+function toggleSkills() {
+    let itemClass = this.parentNode.className;
+
+    if(itemClass === "skills_content skills_close") {
+        this.parentNode.className = "skills_content skills_open"
+    } else {
+        this.parentNode.className = "skills_content skills_close"
+    }
+}
+
+skillsHeader.forEach(Element =>{
+    Element.addEventListener('click', toggleSkills);
+});
